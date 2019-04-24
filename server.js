@@ -7,6 +7,8 @@ const server = express()
 server.use(express.json())
 server.use(helmet())
 
+server.use("/api", databaseRouter)
+
 server.get("/", (req,res) => {
     res.send('<p>working window</p>')
 })
